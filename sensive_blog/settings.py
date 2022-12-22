@@ -9,10 +9,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COMPANY_COORDINATES = [55.751244, 37.618423]
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", 'localhost')
-# ALLOWED_HOSTS = []
-SECRET_KEY = env.str("SECRET_KEY", "REPLACE_ME")
 
-DEBUG = env.bool("DEBUG", True)
+SECRET_KEY = env.str('SECRET_KEY')
+
+DEBUG = env.bool('DEBUG', False)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -45,7 +45,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,7 +63,7 @@ WSGI_APPLICATION = 'sensive_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.getenv('DB_NAME'),
     }
 }
 

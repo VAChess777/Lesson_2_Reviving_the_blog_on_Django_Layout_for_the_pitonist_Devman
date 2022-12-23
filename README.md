@@ -46,12 +46,10 @@ Enter the command in console: `$ python manage.py runserver`.
 
 The program contains scripts:
 
-```main.py``` - the main program.
 ```manage.py``` - the program that runs the server.
-```settings.py``` - the program is located in the project folder. Responsible for setting up access to the employee database.
+```settings.py``` - the program is located in the project folder. Responsible for setting up access to the database.
 ```models.py``` - the program is located in the datacenter folder. The program is responsible for data models and their fields.
-```urls.py``` - the program is located in the project folder. Responsible for setting up links to the 'security console' pages.
-
+```urls.py``` - the program is located in the project folder. Responsible for setting up links to blog pages.
 
 ### Project Goals
 
